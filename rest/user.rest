@@ -1,0 +1,25 @@
+
+# Autentica o usuário e retorna o token necessário para as requisições
+# que precisão de autorização
+
+POST http://localhost:5000/token
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email":"carlos@mail.com",
+    "password":"carlos123"
+}
+
+###
+
+# Cadastra um novo usuário
+
+PUT http://localhost:5000/user
+Content-Type: application/json
+
+{
+    "email": "alana@mail.com",
+    "password": "alana123",
+    "name": "Alana"
+}

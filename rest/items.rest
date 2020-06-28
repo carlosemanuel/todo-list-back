@@ -1,0 +1,41 @@
+# Variável com tokem que é usado para as requisições
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiQXJ0aHVyIiwiZW1haWwiOiJhcnRodXJAbWFpbC5jb20iLCJpZCI6MX0.1Kq-hqwF33BI5NSzJb5S8Csbp84ksCbQVxOHNpP0Wf0
+
+# Remove um item do usuário conectado
+# O id do item a ser removido é passado como parâmetro na URL
+DELETE http://localhost:5000/item/1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+
+# Cadastra um novo item na lista do usuário conectado
+PUT http://localhost:5000/item
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "item": {
+        "name": "pão",
+        "done": false
+    }
+}
+
+###
+
+# Muda o status de 'feito' do item de id passado na URL
+
+POST http://localhost:5000/item/2
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Lista os items do usuário conectado
+
+GET http://localhost:5000/items
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
